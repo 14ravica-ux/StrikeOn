@@ -7,7 +7,7 @@ const videos: VideoResource[] = [
     id: 1,
     title: "How to Prepare for Bed Bug Treatment",
     description: "Step-by-step guide on decluttering and prepping your home before our technicians arrive.",
-    thumbnailUrl: "https://picsum.photos/seed/bedbugvideo/600/400",
+    thumbnailUrl: "https://loremflickr.com/600/400/bedroom,cleaning",
     duration: "4:32",
     category: "Preparation"
   },
@@ -15,7 +15,7 @@ const videos: VideoResource[] = [
     id: 2,
     title: "Signs of Mice in Your Home",
     description: "Learn to identify droppings, gnaw marks, and other early warning signs of a rodent infestation.",
-    thumbnailUrl: "https://picsum.photos/seed/micevideo/600/400",
+    thumbnailUrl: "https://loremflickr.com/600/400/mouse,hole",
     duration: "3:15",
     category: "Identification"
   },
@@ -23,7 +23,7 @@ const videos: VideoResource[] = [
     id: 3,
     title: "Why DIY Pest Control Often Fails",
     description: "Our lead technician explains the difference between store-bought sprays and professional IPM methods.",
-    thumbnailUrl: "https://picsum.photos/seed/pestcontrol/600/400",
+    thumbnailUrl: "https://loremflickr.com/600/400/pest,spray",
     duration: "5:45",
     category: "Education"
   },
@@ -31,7 +31,7 @@ const videos: VideoResource[] = [
     id: 4,
     title: "Ants vs. Termites: Spot the Difference",
     description: "Save your home's structure by knowing exactly which pest you are dealing with.",
-    thumbnailUrl: "https://picsum.photos/seed/antsvideo/600/400",
+    thumbnailUrl: "https://loremflickr.com/600/400/termite,wood",
     duration: "2:50",
     category: "Identification"
   }

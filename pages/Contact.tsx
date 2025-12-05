@@ -75,7 +75,7 @@ export const Contact: React.FC = () => {
 
             {/* Map Placeholder */}
             <div className="bg-slate-200 h-64 rounded-xl overflow-hidden shadow-inner relative group">
-               <img src="https://picsum.photos/seed/reginamap/800/400" alt="Map Location" className="w-full h-full object-cover opacity-80" />
+               <img src="https://loremflickr.com/800/400/map,city" alt="Map Location" className="w-full h-full object-cover opacity-80" />
                <div className="absolute inset-0 flex items-center justify-center">
                  <button className="bg-white text-brand-navy font-bold py-2 px-6 rounded-full shadow-lg hover:scale-105 transition-transform">
                    Get Directions

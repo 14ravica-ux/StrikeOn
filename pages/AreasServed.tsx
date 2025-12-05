@@ -34,7 +34,7 @@ export const AreasServed: React.FC = () => {
               <Button onClick={() => window.location.hash = "#quote"}>Check Availability</Button>
            </div>
            <div className="bg-slate-100 rounded-xl overflow-hidden h-80 relative shadow-xl">
-             <img src="https://picsum.photos/seed/saskmap/800/600" alt="Service Map" className="w-full h-full object-cover" />
+             <img src="https://loremflickr.com/800/400/saskatchewan,map" alt="Service Map" className="w-full h-full object-cover" />
              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow text-sm font-bold text-brand-navy">
                Serving 100km+ Radius of Regina
              </div>

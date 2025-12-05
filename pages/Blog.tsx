@@ -9,7 +9,7 @@ const posts: BlogPost[] = [
     excerpt: "Waking up with itchy bites? Check for these tell-tale signs before the problem gets worse.",
     date: "Oct 12, 2023",
     category: "Bed Bugs",
-    imageUrl: "https://picsum.photos/seed/bed/600/400"
+    imageUrl: "https://loremflickr.com/600/400/bedbug,mattress"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const posts: BlogPost[] = [
     excerpt: "As the temperature in Regina drops, mice look for warmth. Here is how to keep them out.",
     date: "Sep 28, 2023",
     category: "Prevention",
-    imageUrl: "https://picsum.photos/seed/winter/600/400"
+    imageUrl: "https://loremflickr.com/600/400/winter,house"
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const posts: BlogPost[] = [
     excerpt: "We compare store-bought traps vs. professional extermination for carpenter ants.",
     date: "Aug 15, 2023",
     category: "Ants",
-    imageUrl: "https://picsum.photos/seed/ants/600/400"
+    imageUrl: "https://loremflickr.com/600/400/ant,wood"
   }
 ];
 

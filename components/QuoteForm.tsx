@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
-import { CheckCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle, AlertCircle, Shield } from 'lucide-react';
 
 interface QuoteFormProps {
   isCompact?: boolean;
@@ -51,9 +51,9 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ isCompact = false }) => {
   if (submitted) {
     return (
       <div className={`bg-white p-6 rounded-lg shadow-xl border-l-4 border-brand-lime ${isCompact ? 'h-full flex flex-col justify-center' : ''}`}>
-        <div className="flex items-center text-brand-darkLime mb-4">
+        <div className="flex items-center text-brand-lime mb-4">
           <CheckCircle className="w-8 h-8 mr-2" />
-          <h3 className="text-xl font-bold">Request Received!</h3>
+          <h3 className="text-xl font-bold text-brand-navy">Request Received!</h3>
         </div>
         <p className="text-slate-600 mb-4">
           Thank you for contacting StrikeOn Pest. Our team has received your details and will call you back shortly at the number provided.
@@ -67,60 +67,67 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ isCompact = false }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-2xl relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-2 bg-brand-lime"></div>
-      <h3 className={`${isCompact ? 'text-xl' : 'text-2xl'} font-bold text-brand-navy mb-2`}>
-        Get a Free Quote
-      </h3>
-      <p className="text-slate-500 mb-6 text-sm">
-        Fast response. No obligation.
-      </p>
+      {/* Brand Accent Top Bar */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-navy via-brand-lime to-brand-gold"></div>
+      
+      <div className="flex items-center justify-between mb-4">
+         <div>
+            <h3 className={`${isCompact ? 'text-xl' : 'text-2xl'} font-black text-brand-navy`}>
+              Get a Free Quote
+            </h3>
+            <p className="text-slate-500 text-sm">
+              Fast response. No obligation.
+            </p>
+         </div>
+         <Shield className="w-8 h-8 text-brand-lime/20" />
+      </div>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Hidden subject field for Formspree to make the email subject clearer */}
         <input type="hidden" name="_subject" value="New Quote Request - StrikeOn Pest" />
         
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+          <label htmlFor="name" className="block text-sm font-bold text-brand-navy mb-1">Full Name</label>
           <input 
             required
             type="text" 
             id="name"
             name="name"
             placeholder="John Doe"
-            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-colors"
+            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-brand-lime outline-none transition-colors"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+          <label htmlFor="email" className="block text-sm font-bold text-brand-navy mb-1">Email Address</label>
           <input 
             required
             type="email" 
             id="email"
             name="email"
             placeholder="john@example.com"
-            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-colors"
+            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-brand-lime outline-none transition-colors"
           />
         </div>
         
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+          <label htmlFor="phone" className="block text-sm font-bold text-brand-navy mb-1">Phone Number</label>
           <input 
             required
             type="tel" 
             id="phone"
             name="phone"
             placeholder="(306) 555-0123"
-            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-colors"
+            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-brand-lime outline-none transition-colors"
           />
         </div>
 
         <div>
-          <label htmlFor="pest" className="block text-sm font-medium text-slate-700 mb-1">Pest Problem</label>
+          <label htmlFor="pest" className="block text-sm font-bold text-brand-navy mb-1">Pest Problem</label>
           <select 
             id="pest"
             name="pest"
-            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-colors bg-white"
+            className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand-lime focus:border-brand-lime outline-none transition-colors bg-white"
           >
             <option value="General Inquiry">Not Sure / General Inquiry</option>
             <option value="Bed Bugs">Bed Bugs</option>

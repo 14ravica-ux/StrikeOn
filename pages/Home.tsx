@@ -44,8 +44,8 @@ export const Home: React.FC = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/pestcontrol/1920/1080" 
-            alt="Pest Control Technician" 
+            src="https://loremflickr.com/1600/900/exterminator,pest" 
+            alt="Pest Control Technician spraying exterior" 
             className="w-full h-full object-cover opacity-20 mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
@@ -178,8 +178,8 @@ export const Home: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-brand-lime/20 rounded-xl transform rotate-3"></div>
               <img 
-                src="https://picsum.photos/seed/technician/600/400" 
-                alt="Technician spraying" 
+                src="https://loremflickr.com/800/800/worker,pest" 
+                alt="Pest Control Technician Professional" 
                 className="relative rounded-xl shadow-2xl w-full"
               />
             </div>

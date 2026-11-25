@@ -45,26 +45,10 @@ function HeroSection() {
       <div className="h-1.5 bg-gradient-to-r from-brand-lime via-brand-gold to-brand-lime w-full" />
 
       <div className="max-w-7xl mx-auto px-4 py-10 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
 
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col justify-between pr-0 lg:pr-8">
-            {/* Logo + tagline */}
-            <div className="flex items-center gap-4 mb-6">
-              <img src="/logo.png" alt="StrikeOn Pest Control" className="h-20 md:h-24 w-auto" />
-              <div className="border-l-2 border-gray-200 pl-4">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Canadian</p>
-                <p className="font-montserrat font-bold text-brand-navy text-sm">Pest Control Company</p>
-              </div>
-            </div>
-
-            {/* Tagline banner */}
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex-1 h-px bg-brand-lime" />
-              <span className="font-bold text-brand-navy text-sm tracking-widest uppercase">Your Shield Against Pests</span>
-              <div className="flex-1 h-px bg-brand-lime" />
-            </div>
-
             {/* Main headline */}
             <h1 className="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl text-brand-navy leading-none mb-4 uppercase">
               Professional<br />
@@ -120,25 +104,6 @@ function HeroSection() {
               </div>
             </div>
 
-            {/* Fast/Reliable box — matches flyer navy box */}
-            <div className="bg-brand-navy rounded-xl p-5 mt-4">
-              <p className="font-montserrat font-black text-white text-xl text-center mb-1 uppercase">Fast, Reliable</p>
-              <p className="font-montserrat font-black text-brand-lime text-lg text-center mb-4 uppercase">&amp; Effective Solutions</p>
-              <div className="grid grid-cols-3 gap-3 text-center text-white">
-                {[
-                  { icon: Clock, label: '24/7\nService' },
-                  { icon: HomeIcon, label: 'Residential\n& Commercial' },
-                  { icon: Leaf, label: 'Eco-Friendly\nSolutions' },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full border-2 border-brand-lime flex items-center justify-center">
-                      <Icon size={20} className="text-brand-lime" />
-                    </div>
-                    <p className="text-xs font-semibold uppercase tracking-wide whitespace-pre-line leading-tight">{label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

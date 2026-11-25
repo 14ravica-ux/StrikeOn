@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Cream circle -->
+  <circle cx="32" cy="32" r="32" fill="#f9f7f3"/>
+
+  <!-- Shield: navy right half -->
+  <path d="M32 7
+           C32 7 50 13 50 13
+           L50 33
+           C50 45 32 57 32 57
+           L32 7Z"
+        fill="#0d2240"/>
+
+  <!-- Shield: forest green left half -->
+  <path d="M32 7
+           L14 13
+           L14 33
+           C14 45 32 57 32 57
+           Z"
+        fill="#1f6b1f"/>
+
+  <!-- Lightning bolt: gold/yellow, slightly right of centre -->
+  <polygon points="37,9  25,35  33,35  27,55  45,29  37,29"
+           fill="#f5c800"/>
+</svg>

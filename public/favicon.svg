@@ -1,24 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Cream circle -->
-  <circle cx="32" cy="32" r="32" fill="#f9f7f3"/>
-
-  <!-- Shield: navy right half -->
-  <path d="M32 7
-           C32 7 50 13 50 13
-           L50 33
-           C50 45 32 57 32 57
-           L32 7Z"
-        fill="#0d2240"/>
-
-  <!-- Shield: forest green left half -->
-  <path d="M32 7
-           L14 13
-           L14 33
-           C14 45 32 57 32 57
-           Z"
-        fill="#1f6b1f"/>
-
-  <!-- Lightning bolt: gold/yellow, slightly right of centre -->
-  <polygon points="37,9  25,35  33,35  27,55  45,29  37,29"
-           fill="#f5c800"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Navy right half of shield -->
+  <path d="M50 5 L85 18 L85 52 C85 72 50 95 50 95 L50 5Z" fill="#0d2240"/>
+  <!-- Forest green left half of shield -->
+  <path d="M50 5 L15 18 L15 52 C15 72 50 95 50 95 L50 5Z" fill="#1e6b1e"/>
+  <!-- Shield outline for crisp edge -->
+  <path d="M50 5 L85 18 L85 52 C85 72 50 95 50 95 C50 95 15 72 15 52 L15 18 Z"
+        fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.15"/>
+  <!-- Lightning bolt: gold, sharp and centred -->
+  <polygon points="58,8  40,52  52,52  42,92  72,44  58,44" fill="#f5c800"/>
+  <!-- Thin dark outline on bolt for contrast -->
+  <polygon points="58,8  40,52  52,52  42,92  72,44  58,44"
+           fill="none" stroke="#c8980a" stroke-width="1" stroke-linejoin="round"/>
 </svg>

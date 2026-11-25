@@ -3,8 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StrikeOn Pest Control | Regina, SK Exterminators</title>
-    <meta name="description" content="Top-rated pest control in Regina, Saskatchewan. Fast, effective, and eco-friendly removal of bed bugs, rodents, ants, and more. Get a free quote today." />
+    <title>StrikeOn Pest Control | #1 Exterminator in Regina, SK — Same-Day Service</title>
+    <meta name="description" content="Licensed pest control in Regina, Saskatchewan. Fast, effective removal of bed bugs, mice, cockroaches, wasps & more. Free inspection, 30-day guarantee. Call 203-202-5533." />
+
+    <!-- SEO & Open Graph -->
+    <meta name="keywords" content="pest control Regina, bed bug exterminator Regina, mice control Regina SK, wasp removal Regina, cockroach exterminator Saskatchewan, StrikeOn pest control" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="StrikeOn Pest Control" />
+    <link rel="canonical" href="https://strikeonpest.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://strikeonpest.com/" />
+    <meta property="og:title" content="StrikeOn Pest Control | Regina, SK Exterminators" />
+    <meta property="og:description" content="Licensed pest control in Regina, SK. Same-day service, free inspection, 30-day guarantee. Bed bugs, rodents, ants, wasps & more." />
+    <meta property="og:site_name" content="StrikeOn Pest Control" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="StrikeOn Pest Control | Regina, SK" />
+    <meta name="twitter:description" content="Same-day pest control in Regina. Licensed, insured, eco-friendly. Free inspection. Call 203-202-5533." />
+
+    <!-- LocalBusiness + PestControl JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "PestControlService"],
+          "@id": "https://strikeonpest.com/#business",
+          "name": "StrikeOn Pest Control",
+          "alternateName": "StrikeOn Pest Control Ltd.",
+          "description": "Licensed pest control company serving Regina and southern Saskatchewan. Specializing in bed bugs, rodents, cockroaches, ants, wasps, and commercial pest management.",
+          "url": "https://strikeonpest.com",
+          "logo": "https://strikeonpest.com/logo.png",
+          "image": "https://strikeonpest.com/logo.png",
+          "telephone": "+12032025533",
+          "email": "ravi@strikeonpest.com",
+          "founder": {
+            "@type": "Person",
+            "name": "Ravikumar Patel",
+            "jobTitle": "Certified Pest Applicator"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4822 Queen St.",
+            "addressLocality": "Regina",
+            "addressRegion": "SK",
+            "postalCode": "S4S 6V8",
+            "addressCountry": "CA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 50.4452,
+            "longitude": -104.6189
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              "opens": "07:00",
+              "closes": "20:00"
+            }
+          ],
+          "areaServed": [
+            {"@type": "City", "name": "Regina", "sameAs": "https://en.wikipedia.org/wiki/Regina,_Saskatchewan"},
+            {"@type": "City", "name": "Moose Jaw"},
+            {"@type": "City", "name": "Weyburn"},
+            {"@type": "City", "name": "Estevan"},
+            {"@type": "City", "name": "White City"},
+            {"@type": "City", "name": "Pilot Butte"}
+          ],
+          "serviceType": [
+            "Bed Bug Control","Rodent Control","Cockroach Extermination","Ant Control",
+            "Wasp and Hornet Removal","Spider Control","Termite Treatment",
+            "Commercial Pest Control","Preventive Pest Programs"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pest Control Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Free Pest Inspection"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bed Bug Heat Treatment"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rodent Exclusion & Extermination"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Pest Management Program"}}
+            ]
+          },
+          "paymentAccepted": ["Cash", "Debit", "Credit Card", "Interac e-Transfer"],
+          "currenciesAccepted": "CAD",
+          "priceRange": "$$",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://strikeonpest.ca",
+            "https://www.facebook.com/strikeonpestcontrol"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://strikeonpest.com/#website",
+          "url": "https://strikeonpest.com",
+          "name": "StrikeOn Pest Control",
+          "publisher": {"@id": "https://strikeonpest.com/#business"},
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {"@type": "EntryPoint", "urlTemplate": "https://strikeonpest.com/#/pest-library?q={search_term_string}"},
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -74,8 +186,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
-  </body>
+    <div id="root" class="pb-16 md:pb-0"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Layout } from './components/Layout';
-import { Home } from './pages/Home';
-import { Services } from './pages/Services';
-import { PestLibrary } from './pages/PestLibrary';
-import { BranchFinder } from './pages/BranchFinder';
-import { Blog } from './pages/Blog';
-import { About } from './pages/About';
-import { HelpfulVideos } from './pages/HelpfulVideos';
-import { Downloads } from './pages/Downloads';
-import { Contact } from './pages/Contact';
-import { AreasServed } from './pages/AreasServed';
+import { Phone } from 'lucide-react';
+import Layout from './src/components/Layout';
+import Home from './src/pages/Home';
+import Services from './src/pages/Services';
+import PestLibrary from './src/pages/PestLibrary';
+import BranchFinder from './src/pages/BranchFinder';
+import Blog from './src/pages/Blog';
+import About from './src/pages/About';
+import HelpfulVideos from './src/pages/HelpfulVideos';
+import Downloads from './src/pages/Downloads';
+import Contact from './src/pages/Contact';
+import AreasServed from './src/pages/AreasServed';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -20,6 +21,28 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
+
+/** Sticky mobile call + text bar */
+function MobileCallBar() {
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+      <div className="flex border-t border-white/10">
+        <a
+          href="tel:2032025533"
+          className="flex-1 flex items-center justify-center gap-2 bg-brand-lime text-white font-bold py-4 text-base"
+        >
+          <Phone size={18} /> Call Now
+        </a>
+        <a
+          href="sms:2032025533"
+          className="flex-1 flex items-center justify-center gap-2 bg-brand-navy text-white font-bold py-4 text-base border-l border-white/10"
+        >
+          <span>💬</span> Text Us
+        </a>
+      </div>
+    </div>
+  );
+}
 
 const App: React.FC = () => {
   return (
@@ -41,6 +64,7 @@ const App: React.FC = () => {
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
+      <MobileCallBar />
     </Router>
   );
 };

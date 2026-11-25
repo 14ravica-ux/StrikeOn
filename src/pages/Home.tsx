@@ -83,27 +83,10 @@ function HeroSection() {
               <span>Serving Regina &amp; Surrounding Areas</span>
             </div>
 
-            {/* Services list */}
+            {/* Pest icons image */}
             <div className="mb-6">
-              <p className="font-montserrat font-bold text-brand-lime uppercase tracking-wide text-sm mb-3">Our Pest Control Services</p>
-              <div className="grid grid-cols-1 gap-2">
-                {[
-                  'Residential Pest Control',
-                  'Commercial & Industrial Services',
-                  'Bed Bug Treatments',
-                  'Rodent Control (Mice, Rats, etc.)',
-                  'Termite Inspection & Treatment',
-                  'Cockroach, Ant & Spider Extermination',
-                  'Preventive Pest Maintenance Programs',
-                ].map(item => (
-                  <div key={item} className="flex items-center gap-2.5 text-gray-800 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center shrink-0">
-                      <CheckCircle size={12} className="text-white" />
-                    </span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="font-montserrat font-bold text-brand-lime uppercase tracking-wide text-sm mb-3">We Protect You From:</p>
+              <img src="/pest-icons.png" alt="Rodents, Bed Bugs, Cockroaches, Termites, Ants, Spiders" className="w-full max-w-sm" />
             </div>
 
             {/* CTA buttons */}

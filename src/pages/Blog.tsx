@@ -86,8 +86,8 @@ export default function Blog() {
           <h2 className="font-montserrat font-bold text-3xl text-white mb-4">Have a Pest Problem Right Now?</h2>
           <p className="text-gray-300 mb-7">Skip the research — call us and get a certified professional's advice in minutes. Free inspection available.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg">
-              <Phone size={20} /> 203-202-5533
+            <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg">
+              <Phone size={20} /> 801-801-2193
             </a>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-brand-navy font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
               Book Free Inspection <ArrowRight size={18} />

@@ -89,8 +89,8 @@ export default function HelpfulVideos() {
           <h2 className="font-montserrat font-bold text-3xl text-white mb-4">Ready to Take Action?</h2>
           <p className="text-white/90 mb-7">Armed with the right knowledge — now let us handle the hard part. Book a free inspection today.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
-              <Phone size={20} /> 203-202-5533
+            <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+              <Phone size={20} /> 801-801-2193
             </a>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-navy/90 transition-colors text-lg">
               Book Free Inspection <ArrowRight size={18} />

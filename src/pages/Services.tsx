@@ -66,8 +66,8 @@ export default function Services({ type }: ServicesProps) {
                 : 'Keep your business pest-free with our commercial pest management programs. We serve restaurants, hotels, warehouses, offices, and more across Regina and Saskatchewan.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
-                <Phone size={18} /> Call 203-202-5533
+              <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
+                <Phone size={18} /> Call 801-801-2193
               </a>
               <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
                 Free {isResidential ? 'Inspection' : 'Site Assessment'} <ArrowRight size={16} />
@@ -172,8 +172,8 @@ export default function Services({ type }: ServicesProps) {
               : "We'll assess your facility, identify risks, and provide a custom pest management proposal — at no cost."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
-              <Phone size={20} /> 203-202-5533
+            <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+              <Phone size={20} /> 801-801-2193
             </a>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-navy/90 transition-colors text-lg">
               Book Online <ArrowRight size={18} />

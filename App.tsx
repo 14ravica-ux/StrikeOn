@@ -28,13 +28,13 @@ function MobileCallBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div className="flex border-t border-white/10">
         <a
-          href="tel:2032025533"
+          href="tel:8018012193"
           className="flex-1 flex items-center justify-center gap-2 bg-brand-lime text-white font-bold py-4 text-base"
         >
           <Phone size={18} /> Call Now
         </a>
         <a
-          href="sms:2032025533"
+          href="sms:8018012193"
           className="flex-1 flex items-center justify-center gap-2 bg-brand-navy text-white font-bold py-4 text-base border-l border-white/10"
         >
           <span>💬</span> Text Us

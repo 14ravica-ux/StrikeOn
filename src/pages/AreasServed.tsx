@@ -105,7 +105,7 @@ export default function AreasServed() {
                   ))}
                 </div>
                 <p className="mt-5 text-sm text-gray-400">
-                  Don't see your community? We may still be able to help. Call us at <a href="tel:2032025533" className="text-brand-lime font-semibold">203-202-5533</a> to confirm service to your area.
+                  Don't see your community? We may still be able to help. Call us at <a href="tel:8018012193" className="text-brand-lime font-semibold">801-801-2193</a> to confirm service to your area.
                 </p>
               </div>
             </div>
@@ -115,8 +115,8 @@ export default function AreasServed() {
               <div className="bg-brand-navy rounded-2xl p-6 text-white">
                 <h3 className="font-montserrat font-semibold text-lg mb-3">Can't Find Your Area?</h3>
                 <p className="text-gray-300 text-sm mb-5">We serve communities beyond this list. Give us a call and we'll confirm availability for your location.</p>
-                <a href="tel:2032025533" className="flex items-center gap-2 bg-brand-lime text-white font-bold px-5 py-3 rounded-xl hover:bg-brand-darkLime transition-colors w-full justify-center">
-                  <Phone size={16} /> 203-202-5533
+                <a href="tel:8018012193" className="flex items-center gap-2 bg-brand-lime text-white font-bold px-5 py-3 rounded-xl hover:bg-brand-darkLime transition-colors w-full justify-center">
+                  <Phone size={16} /> 801-801-2193
                 </a>
               </div>
 

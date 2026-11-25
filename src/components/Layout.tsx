@@ -41,8 +41,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="bg-brand-navy text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="tel:2032025533" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
-              <Phone size={13} /> <span>203-202-5533</span>
+            <a href="tel:8018012193" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
+              <Phone size={13} /> <span>801-801-2193</span>
             </a>
             <a href="mailto:ravi@strikeonpest.com" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
               <Mail size={13} /> <span>ravi@strikeonpest.com</span>
@@ -63,14 +63,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white shadow-sm'}`}>
         <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-brand-navy rounded-lg p-1.5">
-              <Shield size={22} className="text-brand-lime" />
-            </div>
-            <div>
-              <span className="font-montserrat font-bold text-brand-navy text-lg leading-tight block">StrikeOn</span>
-              <span className="text-xs text-brand-lime font-semibold leading-none block -mt-0.5">PEST CONTROL</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src="/logo.png" alt="StrikeOn Pest Control" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -113,7 +107,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:2032025533"
+              href="tel:8018012193"
               className="flex items-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition-colors"
             >
               <Phone size={15} /> Call Now
@@ -175,8 +169,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 )
               )}
               <div className="pt-3 mt-3 border-t border-gray-100 flex flex-col gap-2">
-                <a href="tel:2032025533" className="flex items-center justify-center gap-2 bg-brand-lime text-white font-semibold py-3 rounded-lg text-sm">
-                  <Phone size={15} /> Call 203-202-5533
+                <a href="tel:8018012193" className="flex items-center justify-center gap-2 bg-brand-lime text-white font-semibold py-3 rounded-lg text-sm">
+                  <Phone size={15} /> Call 801-801-2193
                 </a>
                 <Link to="/contact" className="flex items-center justify-center gap-2 bg-brand-navy text-white font-semibold py-3 rounded-lg text-sm">
                   Book Free Inspection
@@ -197,12 +191,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="bg-brand-lime rounded-lg p-1.5">
-                  <Shield size={20} className="text-white" />
-                </div>
+                <img src="/logo.png" alt="StrikeOn Pest Control" className="h-14 w-auto brightness-0 invert" />
                 <div>
-                  <span className="font-montserrat font-bold text-white text-lg leading-tight block">StrikeOn</span>
-                  <span className="text-xs text-brand-lime font-semibold leading-none block">PEST CONTROL</span>
+                  <span className="font-montserrat font-bold text-white text-lg leading-tight block" style={{display:'none'}}>StrikeOn</span>
+                  <span className="text-xs text-brand-lime font-semibold leading-none block" style={{display:'none'}}>PEST CONTROL</span>
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -249,7 +241,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li className="flex items-start gap-2.5">
                   <Phone size={15} className="text-brand-lime mt-0.5 shrink-0" />
                   <div>
-                    <a href="tel:2032025533" className="hover:text-brand-lime transition-colors">203-202-5533</a>
+                    <a href="tel:8018012193" className="hover:text-brand-lime transition-colors">801-801-2193</a>
                     <p className="text-xs text-gray-500">24/7 Emergency Line</p>
                   </div>
                 </li>

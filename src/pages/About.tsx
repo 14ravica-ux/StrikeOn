@@ -57,8 +57,8 @@ export default function About() {
                   </div>
                 ))}
               </div>
-              <a href="tel:8018012193" className="mt-6 inline-flex items-center gap-2 bg-brand-lime text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-darkLime transition-colors w-full justify-center">
-                <Phone size={16} /> 801-801-2193
+              <a href="tel:2032025533" className="mt-6 inline-flex items-center gap-2 bg-brand-lime text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-darkLime transition-colors w-full justify-center">
+                <Phone size={16} /> 203-202-5533
               </a>
             </div>
 
@@ -161,8 +161,8 @@ export default function About() {
           <h2 className="font-montserrat font-bold text-3xl text-white mb-4">Ready to Work with Us?</h2>
           <p className="text-white/90 mb-7">Get your free inspection today. No commitment, no pressure — just honest advice from a certified professional.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
-              <Phone size={20} /> 801-801-2193
+            <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+              <Phone size={20} /> 203-202-5533
             </a>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-navy/90 transition-colors text-lg">
               Book Free Inspection <ArrowRight size={18} />

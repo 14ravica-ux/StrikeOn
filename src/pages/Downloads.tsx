@@ -57,8 +57,8 @@ export default function Downloads() {
               If you're a property manager, restaurant owner, or business looking for custom pest management documentation, contact us. We can create service agreements, inspection logs, and program summaries for your records.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-7 py-3.5 rounded-xl hover:bg-brand-darkLime transition-colors">
-                <Phone size={16} /> 801-801-2193
+              <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-7 py-3.5 rounded-xl hover:bg-brand-darkLime transition-colors">
+                <Phone size={16} /> 203-202-5533
               </a>
               <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
                 Contact Us <ArrowRight size={16} />

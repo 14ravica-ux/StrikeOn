@@ -44,10 +44,10 @@ function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
-                href="tel:8018012193"
+                href="tel:2032025533"
                 className="inline-flex items-center justify-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-lime/30 hover:shadow-brand-lime/50"
               >
-                <Phone size={20} /> Call 801-801-2193
+                <Phone size={20} /> Call 203-202-5533
               </a>
               <Link
                 to="/contact"
@@ -235,7 +235,7 @@ function WhyChooseUs() {
                 Meet the Team <ArrowRight size={16} />
               </Link>
               <a
-                href="tel:8018012193"
+                href="tel:2032025533"
                 className="inline-flex items-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
                 <Phone size={16} /> Call Us
@@ -350,10 +350,10 @@ function CTASection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="tel:8018012193"
+            href="tel:2032025533"
             className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
           >
-            <Phone size={20} /> 801-801-2193
+            <Phone size={20} /> 203-202-5533
           </a>
           <Link
             to="/contact"

@@ -40,8 +40,8 @@ export default function Contact() {
           <p className="text-gray-500 mb-6">
             Thank you, <strong>{form.name}</strong>! Ravi will contact you within <strong>1–2 hours</strong> (often sooner). For immediate help, call directly:
           </p>
-          <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg w-full">
-            <Phone size={20} /> 801-801-2193
+          <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg w-full">
+            <Phone size={20} /> 203-202-5533
           </a>
           <p className="mt-4 text-xs text-gray-400">Available 24/7 for emergencies</p>
         </div>
@@ -77,9 +77,9 @@ export default function Contact() {
                 {
                   icon: Phone,
                   title: 'Call or Text',
-                  primary: '801-801-2193',
+                  primary: '203-202-5533',
                   secondary: '24/7 Emergency Line',
-                  href: 'tel:8018012193'
+                  href: 'tel:2032025533'
                 },
                 {
                   icon: Mail,
@@ -125,7 +125,7 @@ export default function Contact() {
                   <span className="font-semibold">Emergency Service</span>
                 </div>
                 <p className="text-gray-300 text-sm mb-3">Wasp nest? Rodent discovered? Bed bugs found? We offer same-day emergency response.</p>
-                <a href="tel:8018012193" className="inline-flex items-center gap-2 bg-brand-lime text-white font-bold px-5 py-2.5 rounded-lg hover:bg-brand-darkLime transition-colors w-full justify-center">
+                <a href="tel:2032025533" className="inline-flex items-center gap-2 bg-brand-lime text-white font-bold px-5 py-2.5 rounded-lg hover:bg-brand-darkLime transition-colors w-full justify-center">
                   <Phone size={16} /> Call Now
                 </a>
               </div>

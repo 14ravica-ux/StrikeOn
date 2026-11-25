@@ -146,7 +146,7 @@ export default function PestLibrary() {
                           </div>
                         )}
                         <div className="flex gap-3 pt-2">
-                          <a href="tel:8018012193" className="inline-flex items-center gap-2 bg-brand-lime text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-darkLime transition-colors">
+                          <a href="tel:2032025533" className="inline-flex items-center gap-2 bg-brand-lime text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-darkLime transition-colors">
                             <Phone size={14} /> Call Now
                           </a>
                           <Link to="/contact" className="inline-flex items-center gap-2 border border-brand-navy text-brand-navy text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
@@ -176,8 +176,8 @@ export default function PestLibrary() {
           <h2 className="font-montserrat font-bold text-3xl text-white mb-4">Not Sure What Pest You Have?</h2>
           <p className="text-gray-300 mb-8">Our certified applicator will inspect your property and identify any pest for free. No guessing — just accurate identification and an honest recommendation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg">
-              <Phone size={20} /> 801-801-2193
+            <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkLime transition-colors text-lg">
+              <Phone size={20} /> 203-202-5533
             </a>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-brand-navy font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
               Schedule Inspection <ArrowRight size={18} />

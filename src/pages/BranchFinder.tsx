@@ -112,8 +112,8 @@ export default function BranchFinder() {
             <h3 className="font-montserrat font-bold text-2xl mb-3">Not Sure If We Cover Your Area?</h3>
             <p className="text-gray-300 mb-6">Give us a call — we service many communities across southern Saskatchewan and are always expanding.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:8018012193" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-7 py-3.5 rounded-xl hover:bg-brand-darkLime transition-colors">
-                <Phone size={16} /> 801-801-2193
+              <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-7 py-3.5 rounded-xl hover:bg-brand-darkLime transition-colors">
+                <Phone size={16} /> 203-202-5533
               </a>
               <Link to="/areas-served" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
                 View All Areas <ArrowRight size={16} />

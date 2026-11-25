@@ -142,7 +142,7 @@ export const faqs: FAQ[] = [
   {
     id: 'faq4',
     question: 'How quickly can you respond to an emergency?',
-    answer: 'We offer same-day and 24/7 emergency services for urgent situations like wasp nests, large rodent infestations, or bed bug discoveries. Call us at 801-801-2193 anytime.'
+    answer: 'We offer same-day and 24/7 emergency services for urgent situations like wasp nests, large rodent infestations, or bed bug discoveries. Call us at 203-202-5533 anytime.'
   },
   {
     id: 'faq5',
@@ -274,7 +274,7 @@ export const pests: PestInfo[] = [
 export const branches: Branch[] = [
   {
     city: 'Regina',
-    phone: '801-801-2193',
+    phone: '203-202-5533',
     address: '4822 Queen St., Regina, SK S4S 6V8',
     isMain: true,
     type: 'Main Office',
@@ -283,7 +283,7 @@ export const branches: Branch[] = [
   },
   {
     city: 'Moose Jaw',
-    phone: '801-801-2193',
+    phone: '203-202-5533',
     address: 'Moose Jaw, SK',
     isMain: false,
     type: 'Service Area',
@@ -292,7 +292,7 @@ export const branches: Branch[] = [
   },
   {
     city: 'Weyburn',
-    phone: '801-801-2193',
+    phone: '203-202-5533',
     address: 'Weyburn, SK',
     isMain: false,
     type: 'Service Area',
@@ -301,7 +301,7 @@ export const branches: Branch[] = [
   },
   {
     city: 'Estevan',
-    phone: '801-801-2193',
+    phone: '203-202-5533',
     address: 'Estevan, SK',
     isMain: false,
     type: 'Service Area',

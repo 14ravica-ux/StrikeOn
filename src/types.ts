@@ -63,9 +63,10 @@ export interface VideoResource {
 }
 
 export interface DownloadResource {
-  id: string;
+  id: number | string;
   title: string;
   description: string;
   fileSize: string;
   type: 'PDF' | 'DOC';
+  url?: string;
 }

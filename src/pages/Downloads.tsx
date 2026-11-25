@@ -22,8 +22,29 @@ export default function Downloads() {
       {/* Downloads */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
+          {/* Featured booklet */}
+          {downloads.filter(d => d.url).map(item => (
+            <div key={item.id} className="mb-8 bg-gradient-to-r from-brand-navy to-[#044064] rounded-2xl p-7 md:p-10 flex flex-col md:flex-row items-center gap-7 shadow-lg border border-brand-lime/20">
+              <div className="w-16 h-16 bg-brand-lime rounded-2xl flex items-center justify-center shrink-0">
+                <FileText size={32} className="text-white" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <span className="text-brand-lime text-xs font-bold uppercase tracking-widest">⭐ Featured Download</span>
+                <h3 className="font-montserrat font-bold text-white text-xl md:text-2xl mt-1 mb-2">{item.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+              </div>
+              <a
+                href={item.url}
+                download
+                className="shrink-0 inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold px-7 py-3.5 rounded-xl transition-colors text-sm whitespace-nowrap"
+              >
+                <Download size={16} /> Download PDF
+              </a>
+            </div>
+          ))}
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {downloads.map(item => (
+            {downloads.filter(d => !d.url).map(item => (
               <div key={item.id} className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-lime/30 transition-all group">
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-12 h-12 bg-brand-lime/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-lime transition-colors">

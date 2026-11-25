@@ -414,6 +414,14 @@ export const videos: VideoResource[] = [
 
 export const downloads: DownloadResource[] = [
   {
+    id: 0,
+    title: 'StrikeOn Complete Pest Control Guide',
+    description: 'Our full-colour customer booklet — services, pest identification, safety FAQ, service area map, and contact info. Perfect for sharing with family or keeping handy at home.',
+    fileSize: '125 KB',
+    type: 'PDF',
+    url: '/strikeon-booklet.pdf'
+  },
+  {
     id: 1,
     title: 'Bed Bug Preparation Checklist',
     description: 'A comprehensive checklist to prepare your home before bed bug treatment. Following these steps maximizes treatment effectiveness.',

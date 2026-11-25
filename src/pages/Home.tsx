@@ -3,49 +3,194 @@ import { Link } from 'react-router-dom';
 import {
   Phone, Shield, Clock, CheckCircle, Star, ChevronRight,
   Bug, Home as HomeIcon, Building, Zap, AlertTriangle, ArrowRight,
-  Award, Users, Leaf, ThumbsUp, ChevronDown
+  Award, Users, Leaf, ThumbsUp, ChevronDown, DollarSign,
+  Search, Heart, MessageCircle
 } from 'lucide-react';
-import { services, testimonials, faqs } from '../data';
+import { services, testimonials } from '../data';
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Bug, Home: HomeIcon, Building, Zap, AlertTriangle, Shield, Star
 };
 
+/** Full FAQ data from pamphlet / Q&A materials */
+const allFaqs = [
+  {
+    id: 'q1', category: 'Pricing & Booking',
+    q: 'How much does pest control cost?',
+    a: 'Pricing depends on the pest type, infestation level, and property size. We offer affordable solutions and provide a free assessment to determine the best treatment plan. Call or text us at 203-202-5533 for a customized quote.',
+    icon: DollarSign,
+  },
+  {
+    id: 'q2', category: 'Pricing & Booking',
+    q: 'Do you offer free inspections?',
+    a: 'Yes, we offer free initial consultations for most residential and commercial properties. Our technician will assess the issue and recommend the most effective treatment.',
+    icon: Search,
+  },
+  {
+    id: 'q3', category: 'Safety & Treatments',
+    q: 'Are your treatments safe for children and pets?',
+    a: 'Absolutely. We use professional-grade products and follow strict safety guidelines. We also offer eco-friendly treatment options whenever possible.',
+    icon: Heart,
+  },
+  {
+    id: 'q4', category: 'Pricing & Booking',
+    q: 'How quickly can you come?',
+    a: 'We offer same-day and next-day appointments whenever available. Emergency services may also be available for urgent pest situations.',
+    icon: Clock,
+  },
+  {
+    id: 'q5', category: 'Our Services',
+    q: 'What pests do you treat?',
+    a: 'We specialize in Mice & Rodents, Bed Bugs, Cockroaches, Ants, Spiders, Wasps & Hornets, Termites, and Preventive Pest Maintenance Programs.',
+    icon: Bug,
+  },
+  {
+    id: 'q6', category: 'Safety & Treatments',
+    q: 'How long does treatment take?',
+    a: 'Most residential treatments take between 30 minutes and 2 hours depending on the pest and property size. Commercial properties may require longer visits.',
+    icon: Clock,
+  },
+  {
+    id: 'q7', category: 'Guarantees',
+    q: 'Will the pests come back?',
+    a: 'Our goal is long-term pest elimination. We provide recommendations and preventive measures to reduce the chance of reinfestation. Maintenance plans are also available for ongoing protection.',
+    icon: Shield,
+  },
+  {
+    id: 'q8', category: 'Guarantees',
+    q: 'Are you licensed and insured?',
+    a: 'Yes. StrikeOn Pest Control is fully licensed and insured, giving our customers peace of mind and professional service they can trust.',
+    icon: Award,
+  },
+  {
+    id: 'q9', category: 'Safety & Treatments',
+    q: 'Do I need to leave my house during treatment?',
+    a: 'It depends on the treatment type. In many cases, homeowners can remain in the home. We will provide clear instructions before service begins.',
+    icon: HomeIcon,
+  },
+  {
+    id: 'q10', category: 'Pest ID',
+    q: 'How do I know if I have bed bugs?',
+    a: 'Common signs include: small bites on the skin, blood spots on bedding, tiny dark stains on mattresses, and live bugs near sleeping areas. Contact us for an inspection if you notice any of these signs.',
+    icon: Bug,
+  },
+  {
+    id: 'q11', category: 'Pest ID',
+    q: 'How do I know if I have mice?',
+    a: 'Signs of mice include: droppings, scratching noises in walls or ceilings, chewed wires or food packages, unpleasant odors, and nests or frass. We can inspect and identify entry points as part of our service.',
+    icon: AlertTriangle,
+  },
+  {
+    id: 'q12', category: 'Our Services',
+    q: 'Do you provide commercial pest control?',
+    a: 'Yes. We provide customized pest management programs for Restaurants, Offices, Retail Stores, Warehouses, Property Management Companies, and Industrial Facilities.',
+    icon: Building,
+  },
+  {
+    id: 'q13', category: 'Guarantees',
+    q: 'Do you offer warranties or guarantees?',
+    a: "We stand behind our work. Service warranties may vary depending on the pest type and treatment plan. We'll explain all warranty details before starting the job.",
+    icon: CheckCircle,
+  },
+  {
+    id: 'q14', category: 'Pricing & Booking',
+    q: 'What payment methods do you accept?',
+    a: 'We accept cash, debit, credit cards, and electronic transfers (Interac e-Transfer) for your convenience.',
+    icon: DollarSign,
+  },
+  {
+    id: 'q15', category: 'Pricing & Booking',
+    q: 'Can I get a quote over the phone?',
+    a: 'Yes. If you can describe the pest problem, property type, and location, we can often provide an estimated quote over the phone.',
+    icon: MessageCircle,
+  },
+  {
+    id: 'q16', category: 'Why StrikeOn',
+    q: 'Why should I choose StrikeOn Pest Control?',
+    a: 'Because we focus on: Fast Response (we act quickly to solve your pest problems), Affordable Pricing (quality service that fits your budget), Safe Treatments (eco-friendly solutions), Licensed Professionals (trained, certified, experienced experts), Excellent Customer Service, and Residential & Commercial Expertise.',
+    icon: Star,
+  },
+];
+
+const faqCategories = ['All', 'Pricing & Booking', 'Safety & Treatments', 'Our Services', 'Guarantees', 'Pest ID', 'Why StrikeOn'];
+
+/** Logo watermark used as page-wide background */
+function LogoWatermark() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none select-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden"
+      style={{ opacity: 0.03 }}
+    >
+      <img
+        src="/logo.png"
+        alt=""
+        style={{
+          width: '90vw',
+          maxWidth: '900px',
+          filter: 'grayscale(1) contrast(2)',
+          userSelect: 'none',
+        }}
+      />
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
     <section className="relative bg-brand-navy overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
-      </div>
+      {/* Dot grid background */}
+      <div className="absolute inset-0" style={{
+        backgroundImage: `radial-gradient(circle, rgba(101,163,13,0.15) 1px, transparent 1px)`,
+        backgroundSize: '32px 32px',
+      }} />
 
-      {/* Green accent bar */}
+      {/* Green top accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-lime via-brand-gold to-brand-lime" />
 
-      <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 pt-16 pb-20 md:pt-20 md:pb-28">
+
+        {/* BIG centered logo */}
+        <div className="flex justify-center mb-10">
+          <div className="relative">
+            {/* Glow ring */}
+            <div className="absolute inset-0 rounded-full blur-3xl bg-brand-lime/20 scale-150" />
+            <img
+              src="/logo.png"
+              alt="StrikeOn Pest Control"
+              className="relative h-36 md:h-48 w-auto drop-shadow-2xl"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </div>
+        </div>
+
+        {/* Tagline badge */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-lime/20 border border-brand-lime/40 rounded-full px-5 py-2">
+            <Shield size={14} className="text-brand-lime" />
+            <span className="text-brand-lime text-sm font-bold tracking-widest uppercase">Your Shield Against Pests</span>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left column */}
+          {/* Left copy */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-brand-lime/20 border border-brand-lime/30 rounded-full px-4 py-1.5 mb-6">
-              <Shield size={14} className="text-brand-lime" />
-              <span className="text-brand-lime text-xs font-semibold tracking-wide uppercase">Saskatchewan's Trusted Pest Experts</span>
-            </div>
-
             <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Your Shield<br />
-              <span className="text-brand-lime">Against Pests</span>
+              Professional<br />
+              <span className="text-brand-lime">Pest Control</span><br />
+              You Can Trust!
             </h1>
-
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              Licensed, insured, and eco-conscious pest control for Regina and surrounding Saskatchewan communities. We eliminate pests — guaranteed.
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-3 font-semibold">
+              🛡️ Safe. Effective. Affordable.
+            </p>
+            <p className="text-gray-400 text-base leading-relaxed mb-8">
+              Licensed, insured, and eco-conscious pest control serving Regina and surrounding Saskatchewan communities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href="tel:2032025533"
-                className="inline-flex items-center justify-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-lime/30 hover:shadow-brand-lime/50"
+                className="inline-flex items-center justify-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-lime/30"
               >
                 <Phone size={20} /> Call 203-202-5533
               </a>
@@ -57,22 +202,22 @@ function HeroSection() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-5">
               {[
                 { icon: Shield, label: 'Licensed & Insured' },
                 { icon: Clock, label: '24/7 Emergency' },
-                { icon: CheckCircle, label: '30-Day Guarantee' },
-                { icon: Leaf, label: 'Eco-Friendly Options' },
+                { icon: CheckCircle, label: 'Free Inspection' },
+                { icon: Leaf, label: 'Eco-Friendly' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 text-gray-300 text-sm">
-                  <Icon size={16} className="text-brand-lime" />
+                  <Icon size={15} className="text-brand-lime" />
                   <span>{label}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right column - stat cards */}
+          {/* Right stat cards */}
           <div className="grid grid-cols-2 gap-4">
             {[
               { value: '500+', label: 'Homes Protected', icon: HomeIcon },
@@ -105,9 +250,7 @@ function TrustBar() {
             '✓ Same-Day Service Available',
             '✓ Free Estimates',
             '✓ 30-Day Guarantee',
-          ].map(item => (
-            <span key={item}>{item}</span>
-          ))}
+          ].map(item => <span key={item}>{item}</span>)}
         </div>
       </div>
     </section>
@@ -116,7 +259,7 @@ function TrustBar() {
 
 function ServicesSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
           <span className="text-brand-lime font-semibold text-sm uppercase tracking-widest">What We Do</span>
@@ -151,10 +294,7 @@ function ServicesSection() {
         </div>
 
         <div className="text-center mt-10">
-          <Link
-            to="/residential"
-            className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-navy/90 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors"
-          >
+          <Link to="/residential" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-navy/90 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors">
             View All Services <ArrowRight size={18} />
           </Link>
         </div>
@@ -163,96 +303,132 @@ function ServicesSection() {
   );
 }
 
+/** Big logo showcase + Why Choose Us combined section */
 function WhyChooseUs() {
   const reasons = [
-    {
-      icon: Award,
-      title: 'Certified Professionals',
-      desc: 'Ravikumar Patel is a government-certified pest applicator with deep knowledge of Saskatchewan-specific pest challenges.'
-    },
-    {
-      icon: Shield,
-      title: 'Licensed & Insured',
-      desc: 'Fully licensed under Saskatchewan pesticide regulations and carrying comprehensive liability insurance for your protection.'
-    },
-    {
-      icon: Leaf,
-      title: 'Eco-Friendly Options',
-      desc: 'We offer low-toxicity and green pest control solutions that are safe for children, pets, and the environment.'
-    },
-    {
-      icon: Clock,
-      title: '24/7 Emergency Response',
-      desc: "Pest emergencies don't follow a schedule. We're available around the clock for urgent situations."
-    },
-    {
-      icon: ThumbsUp,
-      title: '30-Day Guarantee',
-      desc: "If pests return within 30 days of treatment, we come back at no charge. We stand behind our work."
-    },
-    {
-      icon: Users,
-      title: 'Local Saskatchewan Business',
-      desc: 'We know the pests, the climate, and the community. Supporting a local business means faster, more personalized service.'
-    },
+    { icon: Award, title: 'Certified Professionals', desc: 'Ravikumar Patel is a government-certified pest applicator with deep knowledge of Saskatchewan-specific pest challenges.' },
+    { icon: Shield, title: 'Licensed & Insured', desc: 'Fully licensed under Saskatchewan pesticide regulations with comprehensive liability insurance for your protection.' },
+    { icon: Leaf, title: 'Eco-Friendly Options', desc: 'Low-toxicity and green pest control solutions safe for children, pets, and the environment.' },
+    { icon: Clock, title: '24/7 Emergency Response', desc: "Pest emergencies don't follow a schedule. We're available around the clock for urgent situations." },
+    { icon: ThumbsUp, title: '30-Day Guarantee', desc: 'If pests return within 30 days of treatment, we come back at no charge. We stand behind our work.' },
+    { icon: Users, title: 'Local Saskatchewan Business', desc: 'We know the pests, the climate, and the community. Supporting a local business means faster, personalized service.' },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
-          <div>
-            <span className="text-brand-lime font-semibold text-sm uppercase tracking-widest">Why StrikeOn</span>
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-brand-navy mt-2 mb-6">
-              Regina's Most Trusted<br />Pest Control Company
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              We built StrikeOn on a simple promise: show up on time, do the job right, and treat every home and business like our own. As a local Saskatchewan company, we understand the specific pest pressures of our climate and community.
-            </p>
-
-            <div className="space-y-3">
-              {[
-                'Government-certified pest applicator',
-                'Health Canada-registered products only',
-                'Transparent pricing — no hidden fees',
-                'Detailed service reports after every visit',
-                'Discreet, unmarked vehicles available',
-                'Bilingual service (English & Punjabi)',
-              ].map(point => (
-                <div key={point} className="flex items-center gap-3 text-gray-700">
-                  <CheckCircle size={18} className="text-brand-lime shrink-0" />
-                  <span>{point}</span>
+    <>
+      {/* Big logo showcase banner */}
+      <section className="relative bg-brand-navy py-16 overflow-hidden">
+        {/* Large faded logo watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <img
+            src="/logo.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full max-w-3xl opacity-5"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center text-white">
+            {[
+              { icon: Shield, label: 'Licensed &\nCertified Professionals' },
+              { icon: Leaf, label: 'Eco-Friendly &\nSafe Treatments' },
+              { icon: DollarSign, label: 'Affordable\nPricing' },
+              { icon: ThumbsUp, label: '100% Customer\nSatisfaction' },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-full border-2 border-brand-lime flex items-center justify-center">
+                  <Icon size={24} className="text-brand-lime" />
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex gap-4">
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-              >
-                Meet the Team <ArrowRight size={16} />
-              </Link>
-              <a
-                href="tel:2032025533"
-                className="inline-flex items-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-              >
-                <Phone size={16} /> Call Us
-              </a>
-            </div>
-          </div>
-
-          {/* Right grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {reasons.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="p-5 bg-gray-50 rounded-2xl hover:bg-brand-navy hover:text-white group transition-all duration-300">
-                <Icon size={24} className="text-brand-lime mb-3" />
-                <h4 className="font-montserrat font-semibold text-brand-navy group-hover:text-white mb-2 transition-colors">{title}</h4>
-                <p className="text-gray-500 group-hover:text-gray-300 text-sm leading-relaxed transition-colors">{desc}</p>
+                <p className="font-semibold text-sm uppercase tracking-wide whitespace-pre-line">{label}</p>
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <p className="font-montserrat font-bold text-2xl md:text-3xl text-white">
+              WHY CHOOSE <span className="text-brand-lime">STRIKEON PEST</span>?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why choose us detail */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-brand-lime font-semibold text-sm uppercase tracking-widest">Why StrikeOn</span>
+              <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-brand-navy mt-2 mb-6">
+                Regina's Most Trusted<br />Pest Control Company
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                We built StrikeOn on a simple promise: show up on time, do the job right, and treat every home and business like our own. As a local Saskatchewan company, we understand the specific pest pressures of our climate and community.
+              </p>
+              <div className="space-y-3">
+                {[
+                  'Government-certified pest applicator',
+                  'Health Canada-registered products only',
+                  'Transparent pricing — no hidden fees',
+                  'Detailed service reports after every visit',
+                  'Discreet, unmarked vehicles available',
+                  'Bilingual service (English & Punjabi)',
+                ].map(point => (
+                  <div key={point} className="flex items-center gap-3 text-gray-700">
+                    <CheckCircle size={18} className="text-brand-lime shrink-0" />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex gap-4">
+                <Link to="/about" className="inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-darkLime text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+                  Meet the Team <ArrowRight size={16} />
+                </Link>
+                <a href="tel:2032025533" className="inline-flex items-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+                  <Phone size={16} /> Call Us
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {reasons.map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="p-5 bg-gray-50 rounded-2xl hover:bg-brand-navy hover:text-white group transition-all duration-300">
+                  <Icon size={24} className="text-brand-lime mb-3" />
+                  <h4 className="font-montserrat font-semibold text-brand-navy group-hover:text-white mb-2 transition-colors">{title}</h4>
+                  <p className="text-gray-500 group-hover:text-gray-300 text-sm leading-relaxed transition-colors">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function PestProtection() {
+  const pests = [
+    { label: 'Rodents', emoji: '🐀' },
+    { label: 'Bed Bugs', emoji: '🪲' },
+    { label: 'Cockroaches', emoji: '🪳' },
+    { label: 'Termites', emoji: '🐛' },
+    { label: 'Ants', emoji: '🐜' },
+    { label: 'Spiders', emoji: '🕷️' },
+    { label: 'Wasps', emoji: '🐝' },
+    { label: 'Hornets', emoji: '🐞' },
+  ];
+  return (
+    <section className="py-14 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <p className="font-montserrat font-bold text-brand-navy text-xl md:text-2xl mb-8 uppercase tracking-wide">
+          We Protect Your Home & Business From:
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          {pests.map(p => (
+            <div key={p.label} className="flex flex-col items-center gap-2 bg-white border border-gray-100 rounded-2xl px-6 py-5 shadow-sm hover:border-brand-lime hover:shadow-md transition-all w-28">
+              <span className="text-4xl">{p.emoji}</span>
+              <span className="text-xs font-bold text-brand-navy uppercase tracking-wide">{p.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -261,8 +437,12 @@ function WhyChooseUs() {
 
 function Testimonials() {
   return (
-    <section className="py-20 bg-brand-navy">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-20 bg-brand-navy relative overflow-hidden">
+      {/* Logo watermark */}
+      <div className="absolute right-0 top-0 h-full flex items-center pointer-events-none opacity-5">
+        <img src="/logo.png" alt="" aria-hidden="true" className="h-full w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
           <span className="text-brand-lime font-semibold text-sm uppercase tracking-widest">Customer Reviews</span>
           <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mt-2 mb-4">
@@ -273,7 +453,6 @@ function Testimonials() {
             <span className="text-gray-400 text-sm ml-2">5.0 average from 100+ reviews</span>
           </div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map(t => (
             <div key={t.id} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
@@ -298,40 +477,110 @@ function Testimonials() {
   );
 }
 
+/** Full FAQ section — all 16 Q&As with category tabs */
 function FAQSection() {
-  const [openId, setOpenId] = useState<string | null>(null);
-  const preview = faqs.slice(0, 5);
+  const [openId, setOpenId] = useState<string | null>('q1');
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const filtered = activeCategory === 'All'
+    ? allFaqs
+    : allFaqs.filter(f => f.category === activeCategory);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-14">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Faint logo watermark bottom-right */}
+      <div className="absolute bottom-0 right-0 pointer-events-none opacity-[0.04]">
+        <img src="/logo.png" alt="" aria-hidden="true" style={{ width: '500px', filter: 'grayscale(1)' }} />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
           <span className="text-brand-lime font-semibold text-sm uppercase tracking-widest">Got Questions?</span>
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-brand-navy mt-2">
+          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-brand-navy mt-2 mb-3">
             Frequently Asked Questions
           </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Everything you need to know about our pest control services. Can't find an answer? Call us at <a href="tel:2032025533" className="text-brand-lime font-semibold hover:underline">203-202-5533</a>.
+          </p>
         </div>
 
-        <div className="space-y-3">
-          {preview.map(faq => (
-            <div key={faq.id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-              <button
-                onClick={() => setOpenId(openId === faq.id ? null : faq.id ?? null)}
-                className="w-full flex items-center justify-between p-5 text-left"
-              >
-                <span className="font-semibold text-brand-navy pr-4">{faq.question}</span>
-                <ChevronDown
-                  size={18}
-                  className={`text-brand-lime shrink-0 transition-transform duration-200 ${openId === faq.id ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {openId === faq.id && (
-                <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4 animate-fade-in">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+        {/* Category tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {faqCategories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => { setActiveCategory(cat); setOpenId(null); }}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                activeCategory === cat
+                  ? 'bg-brand-lime text-white shadow-md'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {cat}
+            </button>
           ))}
+        </div>
+
+        {/* FAQ accordion */}
+        <div className="space-y-3">
+          {filtered.map((faq, idx) => {
+            const Icon = faq.icon;
+            const isOpen = openId === faq.id;
+            return (
+              <div
+                key={faq.id}
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? 'border-brand-lime shadow-md shadow-brand-lime/10'
+                    : 'border-gray-100 shadow-sm hover:border-brand-lime/40'
+                }`}
+              >
+                <button
+                  onClick={() => setOpenId(isOpen ? null : faq.id)}
+                  className="w-full flex items-center gap-4 p-5 text-left bg-white"
+                >
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-brand-lime' : 'bg-brand-lime/10'}`}>
+                    <Icon size={18} className={isOpen ? 'text-white' : 'text-brand-lime'} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-xs font-bold text-brand-lime uppercase tracking-wide block mb-0.5">{faq.category}</span>
+                    <span className="font-semibold text-brand-navy text-sm md:text-base">{faq.q}</span>
+                  </div>
+                  <ChevronDown
+                    size={18}
+                    className={`text-brand-lime shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-5 pb-5 pt-1 bg-white border-t border-brand-lime/10">
+                    <div className="pl-14">
+                      <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-12 bg-brand-navy rounded-3xl p-8 text-center text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 flex items-center justify-center pointer-events-none">
+            <img src="/logo.png" alt="" aria-hidden="true" className="w-64" style={{ filter: 'brightness(0) invert(1)' }} />
+          </div>
+          <div className="relative">
+            <h3 className="font-montserrat font-bold text-2xl mb-2">Still Have Questions?</h3>
+            <p className="text-gray-400 mb-6">Our team is ready to help — call, text, or send us a message anytime.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-brand-lime text-white font-bold px-7 py-3.5 rounded-xl hover:bg-brand-darkLime transition-colors">
+                <Phone size={16} /> Call 203-202-5533
+              </a>
+              <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl transition-colors">
+                Send a Message <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -340,31 +589,26 @@ function FAQSection() {
 
 function CTASection() {
   return (
-    <section className="py-16 bg-brand-lime">
-      <div className="max-w-4xl mx-auto px-4 text-center">
+    <section className="py-16 bg-brand-lime relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 flex items-center justify-end pointer-events-none">
+        <img src="/logo.png" alt="" aria-hidden="true" className="h-full w-auto" style={{ filter: 'brightness(0)' }} />
+      </div>
+      <div className="relative max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">
           Ready to Be Pest-Free?
         </h2>
         <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-          Contact us today for a free inspection and quote. Same-day service available. No obligation.
+          Contact us today for a free inspection and quote. Same-day service available. No obligation. <strong>Don't let pests take over!</strong>
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="tel:2032025533"
-            className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
-          >
+          <a href="tel:2032025533" className="inline-flex items-center justify-center gap-2 bg-white text-brand-lime font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg">
             <Phone size={20} /> 203-202-5533
           </a>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-brand-navy/90 transition-colors"
-          >
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-brand-navy/90 transition-colors">
             Book Free Inspection <ArrowRight size={18} />
           </Link>
         </div>
-        <p className="mt-6 text-white/70 text-sm">
-          📞 Available 24/7 · Serving Regina & Surrounding Areas · Fast Response Guaranteed
-        </p>
+        <p className="mt-6 text-white/70 text-sm">📞 Available 24/7 · Serving Regina & Surrounding Areas · Fast Response Guaranteed</p>
       </div>
     </section>
   );
@@ -373,10 +617,12 @@ function CTASection() {
 export default function Home() {
   return (
     <>
+      <LogoWatermark />
       <HeroSection />
       <TrustBar />
       <ServicesSection />
       <WhyChooseUs />
+      <PestProtection />
       <Testimonials />
       <FAQSection />
       <CTASection />
